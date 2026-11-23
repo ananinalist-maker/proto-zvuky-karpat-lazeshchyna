@@ -140,7 +140,7 @@ p{margin:0 0 1em;text-wrap:pretty}
 .sign small{display:block;font:400 14px var(--ff-t);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px}
 .intro__ph{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,2fr);gap:12px;align-items:end}
 .intro__ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.intro__ph .ph2{aspect-ratio:9/16}
+.intro__ph .ph2{aspect-ratio:3/4}
 .intro__ph .cap{grid-column:1/-1}
 .cap{font-size:13px;color:var(--muted);margin-top:10px}
 
@@ -308,6 +308,14 @@ p{margin:0 0 1em;text-wrap:pretty}
 .foot__cr{margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:rgba(255,255,255,.5)}
 .foot__cr p{max-width:100ch}
 
+/* кнопка «Подзвонити», завжди на екрані */
+.call{position:fixed;right:24px;bottom:24px;z-index:50;display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 22px 0 18px;border-radius:28px;background:var(--wood);color:#fff;text-decoration:none;font:500 14px/1 var(--ff-t);letter-spacing:.12em;text-transform:uppercase;box-shadow:0 8px 28px rgba(21,26,32,.3);transition:background .25s,transform .25s}
+.call:hover{background:var(--wood-d);transform:translateY(-2px)}
+.call .i{width:22px;height:22px}
+.call::before{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid var(--wood);animation:ring 2.4s 3s ease-out 3;pointer-events:none}
+@keyframes ring{from{opacity:.8;transform:scale(1)}to{opacity:0;transform:scale(1.35)}}
+@media (max-width:1200px) and (min-width:761px){.call{bottom:112px}}
+
 /* мобільна панель */
 .mbar{display:none}
 
@@ -372,7 +380,10 @@ p{margin:0 0 1em;text-wrap:pretty}
   .mbar.on{transform:none}
   .mbar__ic{width:50px;height:50px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink);border-radius:2px}
   .mbar .btn{flex:1;min-height:50px}
-  .bubble{bottom:88px}
+  .bubble{bottom:156px}
+  .call{right:16px;bottom:88px;width:56px;height:56px;min-height:0;padding:0;justify-content:center;border-radius:50%}
+  .call span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .mbar__ic[href^="tel"]{display:none}
 }
 .qbfull{background:var(--paper);padding:28px var(--pad) 8px}
 .qbfull .qb{position:static;transform:none;display:grid;width:100%;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
@@ -537,8 +548,8 @@ p{margin:0 0 1em;text-wrap:pretty}
     </div>
     <div class="intro__ph" data-rv>
       <img src="img/budynok-lito.webp" width="1600" height="1067" alt="Триповерховий дерев’яний будинок садиби з відкритими балконами на всю ширину" loading="lazy" decoding="async">
-      <img class="ph2" src="img/tsymbaly.webp" width="576" height="1024" alt="Цимбали на балконі садиби" loading="lazy" decoding="async">
-      <p class="cap">Будинок садиби і&nbsp;цимбали на&nbsp;його балконі.</p>
+      <img class="ph2" src="img/nomer.webp" width="1200" height="1323" alt="Номер з дерев’яними стінами і двоспальним ліжком" loading="lazy" decoding="async">
+      <p class="cap">Будинок садиби і&nbsp;один із&nbsp;номерів.</p>
     </div>
   </div>
 </section>
@@ -700,11 +711,11 @@ p{margin:0 0 1em;text-wrap:pretty}
         <h2 class="h2" id="near-t" data-rv>Лазещина, між Ясінею і&nbsp;Говерлою</h2>
         <p data-rv style="margin-top:22px">Садиба на&nbsp;краю села, поруч річка і&nbsp;магазин. Звідси близько до&nbsp;маршрутів на&nbsp;Говерлу й&nbsp;Петрос, а&nbsp;взимку до&nbsp;лиж на&nbsp;Драгобраті й&nbsp;Буковелі.</p>
         <ul class="dist" data-rv>
-          <li>Ясіня, центр<b>7,8 км&nbsp;· 14 хв</b></li>
-          <li>Буковель<b>18 км&nbsp;· 29 хв</b></li>
-          <li>Ворохта<b>28 км&nbsp;· 39 хв</b></li>
-          <li>Рахів<b>38 км&nbsp;· 52 хв</b></li>
-          <li>Івано-Франківськ<b>101 км&nbsp;· 2 год</b></li>
+          <li>Ясіня, центр<b>7,8 км&nbsp;· 14&nbsp;хв</b></li>
+          <li>Буковель<b>18 км&nbsp;· 29&nbsp;хв</b></li>
+          <li>Ворохта<b>28 км&nbsp;· 39&nbsp;хв</b></li>
+          <li>Рахів<b>38 км&nbsp;· 52&nbsp;хв</b></li>
+          <li>Івано-Франківськ<b>101 км&nbsp;· 2&nbsp;год</b></li>
         </ul>
         <p class="cap">Машиною, за&nbsp;маршрутом OpenStreetMap.</p>
       </div>
@@ -874,6 +885,8 @@ p{margin:0 0 1em;text-wrap:pretty}
   <a class="mbar__ic js-viber" href="viber://chat?number=%2B380972061805" data-msg="Добрий день! Хочу запитати про вільні дати в «Звуках Карпат»." aria-label="Написати у Viber"><svg class="i" aria-hidden="true"><use href="#i-viber"/></svg></a>
   <a class="btn btn--wood" href="#bron">Забронювати</a>
 </div>
+
+<a class="call" href="tel:+380972061805" aria-label="Подзвонити: +380 97 206 18 05"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span>Подзвонити</span></a>
 
 <div class="bubble" id="bubble" role="status" aria-live="polite"></div>
 
