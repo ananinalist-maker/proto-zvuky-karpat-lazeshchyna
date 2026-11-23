@@ -84,14 +84,14 @@ p{margin:0 0 1em;text-wrap:pretty}
 .hero{position:relative;height:100svh;min-height:600px;color:#fff;overflow:hidden;background:#3a4652}
 .hero__v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero__v--m{display:none}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,26,32,.45) 0%,rgba(21,26,32,0) 22%,rgba(21,26,32,0) 42%,rgba(21,26,32,.62) 78%,rgba(21,26,32,.78) 100%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,26,32,.45) 0%,rgba(21,26,32,0) 20%,rgba(21,26,32,.22) 40%,rgba(21,26,32,.6) 70%,rgba(21,26,32,.78) 100%);pointer-events:none}
 .hero__in{position:absolute;z-index:2;left:0;right:0;bottom:clamp(150px,21vh,210px);text-align:center;padding:0 var(--pad)}
-.hero__k{font-size:14px;letter-spacing:.26em;text-transform:uppercase;margin:0 0 18px;opacity:.92}
+.hero__k{font-size:14px;letter-spacing:.26em;text-transform:uppercase;margin:0 0 18px;text-shadow:0 1px 14px rgba(0,0,0,.55)}
 .hero h1{font-size:clamp(44px,7.2vw,104px);line-height:1.02;letter-spacing:.04em;text-transform:uppercase;text-shadow:0 2px 30px rgba(0,0,0,.25)}
 .ridge{display:block;width:min(420px,70vw);height:34px;margin:22px auto 18px;overflow:visible}
 .ridge path{fill:none;stroke:var(--amber);stroke-width:1.5;stroke-linejoin:round;stroke-dasharray:640;stroke-dashoffset:640;animation:draw 2.6s .4s ease forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
-.hero__sub{font-size:clamp(19px,2vw,24px);font-weight:300;margin:0 0 30px}
+.hero__sub{font-size:clamp(19px,2vw,24px);font-weight:400;margin:0 0 30px;text-shadow:0 1px 14px rgba(0,0,0,.55)}
 .rot{display:inline-grid;text-align:left;font-weight:500;color:var(--amber)}
 .rot span{grid-area:1/1;opacity:0;transform:translateY(.4em);transition:opacity .6s,transform .6s}
 .rot span.on{opacity:1;transform:none}
